@@ -57,7 +57,12 @@ public class MainActivity extends ActionBarActivity {
 
 	public void checkApp(View v)
 	{
-		final String ip="116.202.20.58/permission/";
+		Intent intent = new Intent(this,Check.class);
+		TextView tv = (TextView) findViewById(R.id.textView1);
+		String apk = (String)tv.getText();
+		intent.putExtra("apk", apk);
+		startActivity(intent);
+		/*final String ip="116.202.140.232/permission/";
 		final String result;
 		final Data d3 = new Data();
 		Thread t=new Thread()
@@ -104,7 +109,7 @@ public class MainActivity extends ActionBarActivity {
 						HttpGet get=new HttpGet("http://"+ip+"nbtrainer.php?appname="+app+"&permissions="+pl);
 						HttpResponse resp = myClient.execute(get);
 						String res=EntityUtils.toString(resp.getEntity());
-						//Log.d("RESPONSE", res);
+						Log.d("RESPONSE", res);
 						d3.put(res);
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
@@ -115,16 +120,16 @@ public class MainActivity extends ActionBarActivity {
 			}};
 			t.start();
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(10000);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 			//Log.d("testing","done");
-			String finres=d3.get();
-			TextView tv = (TextView) findViewById(R.id.textView2);
+			//String finres=d3.get();
+			/*TextView tv = (TextView) findViewById(R.id.textView2);
 			tv.setText(finres);
-			//THIS IS YOUR ANSWER.YOU CAN RETURN OR DO WHAT YOU WANT
+			*///THIS IS YOUR ANSWER.YOU CAN RETURN OR DO WHAT YOU WANT
 			//Toast.makeText(getApplicationContext(), finres, Toast.LENGTH_SHORT).show();
 	}
 	
